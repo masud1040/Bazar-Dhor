@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import { Noto_Sans_Bengali } from "next/font/google";
+import NavBar from "@/components/shared/NavBar";
+import Marquee from "@/components/shared/Marquee";
 
 const notoSansBengali = Noto_Sans_Bengali({
   variable: "--font-noto-bengali",
@@ -21,6 +23,9 @@ export default function RootLayout({
   return (
     <html lang="bn" className={notoSansBengali.variable}>
       <body className="min-h-screen flex flex-col font-sans">
+<NavBar></NavBar>
+<Marquee></Marquee>
+
         {children}
 
         <ToastContainer />

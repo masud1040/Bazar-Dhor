@@ -1,0 +1,28 @@
+import { IProduct } from "@/types/product";
+import ProductCard from "./ProductCard";
+import { FaArrowTrendUp } from "react-icons/fa6";
+
+interface IProps {
+  products: IProduct[];
+}
+
+const Up = ({ products }: IProps) => {
+  return (
+    <section className="container mx-auto px-4 py-6">
+      <h2 className="text-2xl font-bold mb-4">
+         <FaArrowTrendUp className="text-red-700 inline" />{" "} আজ দাম বেড়েছে 
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {products.slice(0, 6).map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Up;
