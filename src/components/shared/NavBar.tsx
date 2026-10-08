@@ -43,9 +43,11 @@ const NavBar = () => {
             সাইন ইন
           </button>
 
+         <Link href="/sign-in">
           <button className="btn bg-green-700 text-white">
             সাইন আপ
           </button>
+         </Link>
         </div>
 
       </div>

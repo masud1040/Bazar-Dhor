@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import { Noto_Sans_Bengali } from "next/font/google";
 import NavBar from "@/components/shared/NavBar";
 import Marquee from "@/components/shared/Marquee";
+import Footer from "@/components/shared/Footer";
 
 const notoSansBengali = Noto_Sans_Bengali({
   variable: "--font-noto-bengali",
@@ -27,6 +28,7 @@ export default function RootLayout({
 <Marquee></Marquee>
 
         {children}
+        <Footer></Footer>
 
         <ToastContainer />
       </body>

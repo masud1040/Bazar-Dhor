@@ -1,3 +1,4 @@
+import Link from "next/link";
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
 import { FaArrowTrendUp, FaArrowTrendDown } from "react-icons/fa6";
@@ -23,22 +24,19 @@ const Marquee = async () => {
 
   return (
     <div className="border-y border-gray-200 bg-white">
-
       <div className="flex container mx-auto">
-
         <MarqueeText className="py-2" direction="right" duration={20}>
-
           {data.map((product) => (
-            <span
-              className="mx-6 whitespace-nowrap"
+            <Link
               key={product.id}
+              href={`/product/${product.id}`}
+              className="mx-6 whitespace-nowrap"
             >
               <span>{product.categoryIcon}</span>{" "}
               <span>{product.nameBn}</span>{" "}
               <span>
                 {product.today} টাকা/{product.unit}
               </span>{" "}
-
               {product.change.dir === "up" ? (
                 <span className="text-red-500">
                   <FaArrowTrendUp className="inline" />{" "}
@@ -50,13 +48,10 @@ const Marquee = async () => {
                   {product.change.pct}%
                 </span>
               )}
-            </span>
+            </Link>
           ))}
-
         </MarqueeText>
-
       </div>
-
     </div>
   );
 };
