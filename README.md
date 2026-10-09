@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর | BazarDor
 
-## Getting Started
+**Your Smart Companion for Daily Market Prices**
 
-First, run the development server:
+BazarDor is a responsive web application designed to help users explore daily market prices, track price fluctuations, and discover product prices across different categories and markets. It provides a simple and user-friendly interface for accessing market price information.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Daily Market Prices** — Explore the latest available prices of everyday market products.
+- **Price Trend Tracking** — Identify products with rising and falling prices.
+- **Detailed Product Information** — View product details, price ranges, average prices, and market-wise pricing.
+- **Category-Based Browsing** — Easily explore products organized by category.
+- **Smart Price Sorting** — Sort products by price in ascending or descending order.
+- **Secure User Authentication** — Sign up, sign in, and manage user sessions.
+- **Fully Responsive UI** — Enjoy a consistent experience across mobile, tablet, and desktop devices.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Technology | Purpose |
+|---|---|
+| Next.js | React framework for building the application |
+| React | Component-based user interface |
+| TypeScript | Type-safe development |
+| Tailwind CSS | Responsive styling |
+| DaisyUI | UI components and design utilities |
+| Better Auth | User authentication |
+| MongoDB | Database |
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="center">
+  <strong>বাজার দর — বাজারের দামের তথ্য, সহজেই আপনার হাতের নাগালে।</strong>
+</p>
