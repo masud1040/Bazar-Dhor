@@ -1,8 +1,8 @@
+
 import Image from "next/image";
 import NavLinks from "./NavLinks";
 import Link from "next/link";
 import UserInfo from "../UserMenu";
-// import NavLinks from "./NavLinks";
 
 const NavBar = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
@@ -11,56 +11,37 @@ const NavBar = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white">
-      
+      <div className="navbar container mx-auto min-h-16 px-3 sm:px-4 md:px-6">
+        <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3">
+          <Link href="/" className="shrink-0">
+            <Image
+              src="/logo-icon.png"
+              alt="বাজার দর"
+              width={48}
+              height={48}
+              className="h-9 w-9 sm:h-11 sm:w-11 md:h-12 md:w-12"
+            />
+          </Link>
 
-      <div className="navbar container mx-auto px-4">
-        
-  
-        <div className="flex-1 flex items-center gap-2">
-          
-          <Link href="/"><Image
-            src="/logo-icon.png"
-            alt="বাজার দর"
-            width={48}
-            height={48}
-          /></Link>
-
-          <div>
-            <h1 className="text-xl font-bold">
+          <div className="min-w-0">
+            <h1 className="text-base font-bold sm:text-lg md:text-xl">
               বাজার দর
             </h1>
 
-            <p className="text-xs text-gray-500">
+            <p className="truncate text-[10px] text-gray-500 sm:text-xs">
               {date}
             </p>
           </div>
-
         </div>
 
-
-       
-        <div className="flex items-center gap-2">
-        {/* <Link href="/sign-in">
-          <button className="btn btn-ghost">
-            সাইন ইন
-          </button>
-        
-        </Link>
-
-         <Link href="/sign-up">
-          <button className="btn bg-green-700 text-white">
-            সাইন আপ
-          </button>
-         </Link> */}
-         <UserInfo></UserInfo>
+        <div className="ml-2 flex shrink-0 items-center gap-1 sm:gap-2">
+          <UserInfo />
         </div>
-
       </div>
-   <hr className="border-gray-200" />
 
+      <hr className="border-gray-200" />
 
-<NavLinks></NavLinks>
-
+      <NavLinks />
     </header>
   );
 };

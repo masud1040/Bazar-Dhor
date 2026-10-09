@@ -34,7 +34,10 @@ export default function RootLayout({
 <NavBar></NavBar>
 <Marquee></Marquee>
 
-        {children}
+     <main className="flex-1">
+    {children}
+  </main>
+
         <Footer></Footer>
 
         <ToastContainer />

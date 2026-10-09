@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
@@ -24,13 +25,17 @@ const Marquee = async () => {
 
   return (
     <div className="border-y border-gray-200 bg-white">
-      <div className="flex container mx-auto">
-        <MarqueeText className="py-2" direction="right" duration={20}>
+      <div className="container mx-auto flex w-full max-w-full px-2 sm:px-4 md:px-6">
+        <MarqueeText
+          className="py-2 text-sm sm:text-base"
+          direction="right"
+          duration={20}
+        >
           {data.map((product) => (
             <Link
               key={product.id}
               href={`/product/${product.id}`}
-              className="mx-6 whitespace-nowrap"
+              className="mx-3 whitespace-nowrap sm:mx-4 md:mx-6"
             >
               <span>{product.categoryIcon}</span>{" "}
               <span>{product.nameBn}</span>{" "}
