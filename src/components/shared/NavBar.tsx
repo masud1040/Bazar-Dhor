@@ -39,11 +39,14 @@ const NavBar = () => {
 
        
         <div className="flex items-center gap-2">
+        <Link href="/sign-in">
           <button className="btn btn-ghost">
             সাইন ইন
           </button>
+        
+        </Link>
 
-         <Link href="/sign-in">
+         <Link href="/sign-up">
           <button className="btn bg-green-700 text-white">
             সাইন আপ
           </button>

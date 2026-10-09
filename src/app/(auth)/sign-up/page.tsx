@@ -1,10 +1,57 @@
+
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import { FaGithub } from "react-icons/fa6";
-import { FcGoogle } from "react-icons/fc";
 
 const SignUpPage = () => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+
+    const user = Object.fromEntries(formData.entries()) as {
+      name: string;
+      email: string;
+      password: string;
+    };
+
+    const { data, error } = await authClient.signUp.email({
+      ...user,
+      callbackURL: "/",
+    });
+
+    if (data) {
+      console.log(data);
+    }
+
+    if (error) {
+      console.log(error);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    const { error } = await authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/",
+    });
+
+    if (error) {
+      console.log(error);
+    }
+  };
+
+  const handleGithubSignIn = async () => {
+    const { error } = await authClient.signIn.social({
+      provider: "github",
+      callbackURL: "/",
+    });
+
+    if (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-[#f5f9f5] px-4 py-10">
       <div className="max-w-md mx-auto">
@@ -19,7 +66,7 @@ const SignUpPage = () => {
         </div>
 
         <div className="bg-white border border-gray-200 rounded-2xl p-6">
-          <form className="space-y-4">
+          <form onSubmit={onSubmit} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 নাম
@@ -28,6 +75,7 @@ const SignUpPage = () => {
               <input
                 type="text"
                 name="name"
+                required
                 placeholder="সাইফুল আলম মাসুদ"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-green-600"
               />
@@ -41,6 +89,7 @@ const SignUpPage = () => {
               <input
                 type="email"
                 name="email"
+                required
                 placeholder="masud@gmail.com"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-green-600"
               />
@@ -54,20 +103,9 @@ const SignUpPage = () => {
               <input
                 type="password"
                 name="password"
+                required
+                minLength={8}
                 placeholder="কমপক্ষে ৮ অক্ষর"
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-green-600"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                পাসওয়ার্ড নিশ্চিত করুন
-              </label>
-
-              <input
-                type="password"
-                name="confirmPassword"
-                placeholder="আবার লিখুন"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-green-600"
               />
             </div>
@@ -82,35 +120,33 @@ const SignUpPage = () => {
 
           <div className="flex items-center gap-3 my-5">
             <div className="h-px bg-gray-200 flex-1"></div>
-
             <span className="text-sm text-gray-500">অথবা</span>
-
             <div className="h-px bg-gray-200 flex-1"></div>
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-           <button
-  type="button"
-  className="border border-gray-200 rounded-lg py-2.5 text-sm font-medium flex items-center justify-center gap-2"
->
-  <FcGoogle size={20} />
-  Google দিয়ে চালিয়ে যান
-</button>
+            <button
+              type="button"
+              onClick={handleGoogleSignIn}
+              className="border border-gray-200 rounded-lg py-2.5 text-sm font-medium"
+            >
+              Google দিয়ে চালিয়ে যান
+            </button>
 
-           <button
-  type="button"
-  className="border border-gray-200 rounded-lg py-2.5 text-sm font-medium flex items-center justify-center gap-2"
->
-  <FaGithub size={20} />
-  GitHub দিয়ে চালিয়ে যান
-</button>
+            <button
+              type="button"
+              onClick={handleGithubSignIn}
+              className="border border-gray-200 rounded-lg py-2.5 text-sm font-medium"
+            >
+              GitHub দিয়ে চালিয়ে যান
+            </button>
           </div>
 
           <p className="text-center text-sm text-gray-600 mt-5">
             অ্যাকাউন্ট আছে?{" "}
-            <a href="/signin" className="text-green-600 font-medium">
+            <Link href="/signin" className="text-green-600 font-medium">
               সাইন ইন করুন
-            </a>
+            </Link>
           </p>
         </div>
 
