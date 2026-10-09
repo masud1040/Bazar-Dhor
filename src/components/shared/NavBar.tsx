@@ -1,6 +1,7 @@
 import Image from "next/image";
 import NavLinks from "./NavLinks";
 import Link from "next/link";
+import UserInfo from "../UserMenu";
 // import NavLinks from "./NavLinks";
 
 const NavBar = () => {
@@ -39,7 +40,7 @@ const NavBar = () => {
 
        
         <div className="flex items-center gap-2">
-        <Link href="/sign-in">
+        {/* <Link href="/sign-in">
           <button className="btn btn-ghost">
             সাইন ইন
           </button>
@@ -50,7 +51,8 @@ const NavBar = () => {
           <button className="btn bg-green-700 text-white">
             সাইন আপ
           </button>
-         </Link>
+         </Link> */}
+         <UserInfo></UserInfo>
         </div>
 
       </div>

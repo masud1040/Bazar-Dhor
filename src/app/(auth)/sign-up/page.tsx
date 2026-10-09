@@ -3,6 +3,8 @@
 
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
 
 const SignUpPage = () => {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -125,21 +127,23 @@ const SignUpPage = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            <button
-              type="button"
-              onClick={handleGoogleSignIn}
-              className="border border-gray-200 rounded-lg py-2.5 text-sm font-medium"
-            >
-              Google দিয়ে চালিয়ে যান
-            </button>
-
-            <button
-              type="button"
-              onClick={handleGithubSignIn}
-              className="border border-gray-200 rounded-lg py-2.5 text-sm font-medium"
-            >
-              GitHub দিয়ে চালিয়ে যান
-            </button>
+               <button
+                          type="button"
+                          onClick={handleGoogleSignIn}
+                          className="border border-gray-200 rounded-lg py-2.5 text-sm font-medium flex items-center justify-center gap-2"
+                        >
+                          <FcGoogle size={20} />
+                          Google দিয়ে চালিয়ে যান
+                        </button>
+            
+                        <button
+                          type="button"
+                          onClick={handleGithubSignIn}
+                          className="border border-gray-200 rounded-lg py-2.5 text-sm font-medium flex items-center justify-center gap-2"
+                        >
+                          <FaGithub size={20} />
+                          GitHub দিয়ে চালিয়ে যান
+                        </button>
           </div>
 
           <p className="text-center text-sm text-gray-600 mt-5">
