@@ -4,21 +4,26 @@
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 const UserInfo = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
 
   const handleSignout = async () => {
-    const { error } = await authClient.signOut();
+  const { error } = await authClient.signOut();
 
-    if (error) {
-      console.log(error);
-      return;
-    }
+  if (error) {
+    toast.error(error.message);
+    return;
+  }
 
+  toast.success("সফলভাবে লগ আউট হয়েছে!");
+
+  setTimeout(() => {
     window.location.href = "/sign-in";
-  };
+  }, 1000);
+};
 
   if (isPending) {
     return <div className="h-10 w-24 animate-pulse rounded-lg bg-gray-100" />;
@@ -34,6 +39,8 @@ const UserInfo = () => {
                 <Image
                   src={user.image}
                   alt={user.name || "Profile"}
+                    width={40}
+                     height={40}
                   className="h-10 w-10 rounded-full object-cover"
                 />
               ) : (

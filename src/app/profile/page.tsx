@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FiLogOut, FiEdit2, FiX } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 const ProfilePage = () => {
 
@@ -36,7 +37,7 @@ const ProfilePage = () => {
       return;
     }
 
-    alert("নাম সফলভাবে আপডেট হয়েছে!");
+    toast.success("নাম সফলভাবে আপডেট হয়েছে!");
     setShow(false);
   };
 
@@ -44,9 +45,10 @@ const ProfilePage = () => {
     const { error } = await authClient.signOut();
 
     if (error) {
-      alert(error.message);
+    toast.error(error.message);
       return;
     }
+    toast.success("সফলভাবে লগ আউট হয়েছে!");
 
     window.location.href = "/sign-in";
   };
@@ -89,7 +91,7 @@ const ProfilePage = () => {
   return (
     <main className="min-h-screen bg-[#f5f8f5] px-4 py-8 sm:py-12">
       <div className="mx-auto max-w-2xl">
-        {/* Heading */}
+        
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-800">
             আমার প্রোফাইল
@@ -100,7 +102,7 @@ const ProfilePage = () => {
           </p>
         </div>
 
-        {/* Profile Card */}
+   
         <div className="card border border-gray-200 bg-base-100 shadow-sm">
           <div className="card-body gap-5 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
             <div className="flex min-w-0 items-center gap-4">
@@ -111,10 +113,10 @@ const ProfilePage = () => {
                   width={64}
                   height={64}
                   unoptimized
-                  className="h-16 w-16 shrink-0 rounded-full object-cover"
+                  className="h-16 w-16 rounded-full object-cover"
                 />
               ) : (
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-green-100 text-xl font-bold text-green-800">
+                <div className="flex h-16 w-16  items-center justify-center rounded-full bg-green-100 text-xl font-bold text-green-800">
                   U
                 </div>
               )}
@@ -124,7 +126,7 @@ const ProfilePage = () => {
                   {user.name}
                 </h2>
 
-                <p className="mt-1 break-all text-sm text-gray-500">
+                <p className="mt-1  text-sm text-gray-500">
                   {user.email}
                 </p>
               </div>
