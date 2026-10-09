@@ -5,6 +5,7 @@ import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -24,11 +25,13 @@ const SignUpPage = () => {
     });
 
     if (data) {
-      console.log(data);
+      toast.success("সাইন আপ করা হয়েছে!");
+      window.location.href = "/";
+
     }
 
     if (error) {
-      console.log(error);
+      toast.error(error.message);
     }
   };
 
@@ -39,7 +42,7 @@ const SignUpPage = () => {
     });
 
     if (error) {
-      console.log(error);
+      toast.error(error.message);
     }
   };
 
@@ -50,7 +53,7 @@ const SignUpPage = () => {
     });
 
     if (error) {
-      console.log(error);
+      toast.error(error.message);
     }
   };
 
