@@ -25,7 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="bn" className={notoSansBengali.variable}>
+    <html lang="bn" 
+    //light
+      data-theme="light"
+
+    className={notoSansBengali.variable}>
       <body className="min-h-screen flex flex-col font-sans">
 <NavBar></NavBar>
 <Marquee></Marquee>

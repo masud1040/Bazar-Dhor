@@ -135,7 +135,7 @@ const SignInPage = () => {
 
           <p className="text-center text-sm text-gray-600 mt-5">
             অ্যাকাউন্ট নেই?{" "}
-            <Link href="/signup" className="text-green-600 font-medium">
+            <Link href="/sign-up" className="text-green-600 font-medium">
               সাইন আপ করুন
             </Link>
           </p>

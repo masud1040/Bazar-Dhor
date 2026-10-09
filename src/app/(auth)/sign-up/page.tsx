@@ -148,7 +148,7 @@ const SignUpPage = () => {
 
           <p className="text-center text-sm text-gray-600 mt-5">
             অ্যাকাউন্ট আছে?{" "}
-            <Link href="/signin" className="text-green-600 font-medium">
+            <Link href="/sign-in" className="text-green-600 font-medium">
               সাইন ইন করুন
             </Link>
           </p>
