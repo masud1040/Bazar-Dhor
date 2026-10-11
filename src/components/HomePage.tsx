@@ -10,14 +10,14 @@ const HomePage = async () => {
   );
 
   const products: IProduct[] = await res.json();
+  
+const upProducts = products
+  .filter((product) => product.change.dir === "up")
+  .sort((a, b) => b.change.pct - a.change.pct);
 
-  const upProducts = products.filter(
-    (product) => product.change.dir === "up"
-  );
-
-  const downProducts = products.filter(
-    (product) => product.change.dir === "down"
-  );
+const downProducts = products
+  .filter((product) => product.change.dir === "down")
+  .sort((a, b) => Math.abs(b.change.pct) - Math.abs(a.change.pct));
 
   return (
     <main>

@@ -2,7 +2,7 @@ import { IProduct } from "@/types/product";
 import ProductCard from "./ProductCard";
 import { FaArrowTrendDown } from "react-icons/fa6";
 
-interface IProps {
+interface IProps { 
   products: IProduct[];
 }
 

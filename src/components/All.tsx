@@ -14,6 +14,9 @@ const All = ({ products }: IProps) => {
       <h2 className="text-2xl font-bold mb-4">
         সব পণ্য
       </h2>
+      <p className="mb-4 text-sm text-gray-500">
+  নিত্যপ্রয়োজনীয় পণ্যের আজকের দাম ও বাজারদরের পরিবর্তন দেখুন।
+</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {products.map((product) => (

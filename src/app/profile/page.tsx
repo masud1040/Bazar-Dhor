@@ -77,7 +77,7 @@ const ProfilePage = () => {
             </p>
 
             <Link
-              href="/signin"
+              href="/sign-in"
               className="btn mt-3 border-0 bg-green-700 text-white hover:bg-green-800"
             >
               সাইন ইন

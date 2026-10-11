@@ -55,7 +55,7 @@ const SignInPage = () => {
     if (error) {
       toast.error(error.message);
       // console.log(error.message);
-      alert(error.message);
+      // alert(error.message);
     }
   };
 

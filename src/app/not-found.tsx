@@ -39,13 +39,7 @@ const NotFound = () => {
             হোম পেজে ফিরে যান
           </Link>
 
-     <Link
-  href="/"
-  className="btn btn-outline border-green-700 text-green-700 hover:border-green-800 hover:bg-green-700 hover:text-white"
->
-  <FiArrowLeft size={18} />
-  হোম পেজে ফিরুন
-</Link>
+   
         </div>
 
         {/* Footer */}

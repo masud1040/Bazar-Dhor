@@ -1,5 +1,4 @@
-
-import Link from "next/link";
+import CategoryNavLink from "./CategoryNavLink";
 
 interface ICategory {
   id: string;
@@ -19,13 +18,12 @@ const NavLinks = async () => {
     <nav className="w-full border-t border-gray-100 bg-white">
       <div className="scrollbar-hide flex w-full items-center justify-start gap-5 overflow-x-auto px-4 py-3 sm:justify-center sm:gap-6 sm:px-5 md:gap-8">
         {data.map((category) => (
-          <Link
+          <CategoryNavLink
             key={category.id}
-            href={`/category/${category.slug}`}
-            className="shrink-0 whitespace-nowrap text-xs font-medium text-gray-700 transition-colors hover:text-green-700 sm:text-sm"
-          >
-            {category.icon} {category.nameBn}
-          </Link>
+            slug={category.slug}
+            nameBn={category.nameBn}
+            icon={category.icon}
+          />
         ))}
       </div>
     </nav>
